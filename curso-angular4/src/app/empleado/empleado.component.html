@@ -23,3 +23,19 @@
         <li *ngIf="trabajadores[1].contratado == false">No esta contratado</li>
     </ul>
 </div>
+
+<hr>
+
+<h3>Listado de empleados</h3>
+<ul>
+    <li *ngFor="let empleado of trabajadores; let i = index">
+        <strong>Empleado {{i+1}}</strong>
+        <ul>
+            <li>Nombre: {{empleado.nombre}}</li>
+            <li>Edad: {{empleado.edad}}</li>
+            <li>Cargo: {{empleado.cargo}}</li>
+            <li *ngIf="empleado.contratado == true">Esta contratado</li>
+            <li *ngIf="empleado.contratado == false">No esta contratado</li>
+        </ul>
+    </li>
+</ul>
