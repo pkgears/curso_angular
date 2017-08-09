@@ -5,7 +5,7 @@
 
 <h3>Selector de colores</h3>
 <input type="text" [(ngModel)]="color_seleccionado" >
-<pre>
+<pre [style.border]="color_seleccionado == 'red' ? '5px solid '+color_seleccionado : '1px solid '+color_seleccionado ">
     <strong>Color elegido:</strong>
     {{color_seleccionado}}
 </pre>
