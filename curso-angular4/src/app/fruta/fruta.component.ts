@@ -24,7 +24,21 @@ export class FrutaComponent{
     }
     // ngOnInit método que se ejecuta al cargar el componente
     ngOnInit(){
-        this.holaMundo(this.nombre);
+        //this.holaMundo(this.nombre);
+        
+        //Variables y alcance
+        //let son variables de bloque
+        //var son variable globales
+        var uno = 8;
+        var dos = 15;
+        
+        if(uno === 8){
+            let uno = 3;
+            var dos = 88;
+            console.log("Dentro del IF "+ uno);
+        }
+        console.log('Fuera del IF '+ uno);
+        
     }
 
     holaMundo(nombre){
