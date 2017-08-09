@@ -20,4 +20,8 @@ export class ContactoComponent{
             this.params = params['page']
         });   
     }
+
+    redirigir(){
+        this._router.navigate(['/contacto','CesarEduardo'])
+    }
 }

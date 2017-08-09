@@ -3,3 +3,7 @@
     <h3>Parametro de URL</h3>
     <h4>{{params}}</h4>
 </div>
+
+<div *ngIf="!params">
+    <button (click)="redirigir()">Ir a la página con parametro</button>
+</div>
