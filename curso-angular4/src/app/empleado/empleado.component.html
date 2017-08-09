@@ -3,6 +3,23 @@
 
 <hr>
 
+<h3>Selector de colores</h3>
+<input type="text" [(ngModel)]="color_seleccionado" >
+<pre>
+    <strong>Color elegido:</strong>
+    {{color_seleccionado}}
+</pre>
+<div [ngStyle]="{
+    'background':color_seleccionado,
+    'width':'100px',
+    'height':'100px',
+    'float': 'right',
+    'margin-right':'50%'
+    }"></div>
+<div style="clear: both"></div>
+
+<hr>
+
 <h3>Ejercicio de ngSwtich</h3>
 <ul [ngSwitch]="color">
     <li *ngSwitchCase="'red'" [ngStyle]="{
