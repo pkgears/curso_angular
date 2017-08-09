@@ -9,3 +9,8 @@
 .letraGrande{
     font-size: 25px;
 }
+
+.activado{
+    font-weight: bold;
+    color: green
+}
