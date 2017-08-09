@@ -1,6 +1,29 @@
 <hr>
 <h2>{{nombre_componente}}</h2>
-<h3>Empleado estrella</h3>
+
+<hr>
+
+<h3>Ejercicio de ngSwtich</h3>
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'red'" [ngStyle]="{
+        'background': color,
+        'color': 'white',
+        'padding': '5px'}">Es de color ROJO</li>
+    <li *ngSwitchCase="'green'" [ngStyle]="{
+    'background': color,
+    'color': 'white',
+    'padding': '5px'}">Es de color VERDE</li>
+    <li *ngSwitchCase="'blue'" [ngStyle]="{
+    'background': color,
+    'color': 'white',
+    'padding': '5px'}">Es de color AZUL</li>
+</ul>
+<button (click)="cambiarColor('red')">Poner ROJO</button>
+<button (click)="cambiarColor('green')">Poner VERDE</button>
+<button (click)="cambiarColor('blue')">Poner AZUL</button>
+<hr>
+
+<h3>Ejercicio de ngIf</h3>
 
 <div *ngIf="trabajador_externo == true">
     <button (click)="cambiarExterno(false)">Mostrar trabajador</button>
@@ -25,8 +48,8 @@
 </div>
 
 <hr>
-
-<h3>Listado de empleados</h3>
+<h3>Ejercicio de ngFor</h3>
+<h4>Listado de empleados</h4>
 <ul>
     <li *ngFor="let empleado of trabajadores; let i = index">
         <strong>Empleado {{i+1}}</strong>
