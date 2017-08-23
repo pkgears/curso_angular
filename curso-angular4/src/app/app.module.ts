@@ -9,6 +9,8 @@ import { EmpleadoComponent} from './empleado/empleado.component';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component'
 import { MomentPipePipe } from "./pipes/moment-pipe.pipe"
+import { PlantillasComponent } from './plantillas/plantillas.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { MomentPipePipe } from "./pipes/moment-pipe.pipe"
     EmpleadoComponent,
     HomeComponent,
     ContactoComponent,
-    MomentPipePipe
+    MomentPipePipe,
+    PlantillasComponent
   ],
   imports: [
     BrowserModule,
