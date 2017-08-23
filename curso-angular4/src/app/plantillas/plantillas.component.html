@@ -4,8 +4,8 @@
 
 <br><br>
 
-<div *ngIf="administrador; else noAdmin">
-  <strong style="background: green">Eres el admin</strong>
+<div *ngIf="administrador; then admin; else noAdmin">
+  <!-- <strong style="background: green">Eres el admin</strong> -->
 </div>
 
 <!-- <div *ngIf="!administrador">
@@ -13,6 +13,10 @@
 </div> -->
 
 <hr>
+
+<ng-template #admin>
+  <strong style="background: green">Eres el super-admin</strong>
+</ng-template>
 
 <ng-template #noAdmin>
     <strong style="background: red; color:white">No eres el admin</strong>
