@@ -54,6 +54,11 @@
   background: #E03137;
 }
 
+#nav ul li a.activado{
+  background: #E03137 !important;
+  border-bottom: 3px solid white;
+}
+
 #main .jumbotron {
   padding: 50px;
   margin-top: 30px;

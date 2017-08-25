@@ -14,7 +14,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
      private _route: ActivatedRoute,
      private _router: Router
    ){
-     this.titulo = 'Lista de Productos'
+     this.titulo = 'Lista de Productos';
    }
 
    ngOnInit(){
