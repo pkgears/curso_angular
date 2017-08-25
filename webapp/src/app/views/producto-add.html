@@ -23,7 +23,7 @@
   <textarea class="form-control"  #description="ngModel" name="description" [(ngModel)]="producto.description" required></textarea>
 
   <label for="">Imagen</label>
-  <input type="file" name="" value="">
+  <input type="file" name="" value="" (change)=fileChangeEvent($event) [multiple]="true">
   <br>
   <input type="submit" value="Guardar" [disabled]="!formProducto.form.valid" class="btn btn-success">
 

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :update, :destroy]
+  before_action :set_product, only: [:show, :update, :destroy, :upload_image]
 
   # GET /products
   def index
@@ -39,6 +39,15 @@ class ProductsController < ApplicationController
     @product.destroy
   end
 
+  def upload_image
+    image = params[:image]
+    if @product.update(:image => image)
+      render json: { status: 200 }, status: 200
+    else
+      render json: { status: 500 }, status: 500
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -47,7 +56,12 @@ class ProductsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def product_params
-      params.require(:product).permit(:name, :description, :price)
+      params.require(:product).permit(:name, :description, :price, :image)
       # params.require(:product).permit()
     end
+
+    def image_params
+      params.permit(:image)
+    end
+
 end
