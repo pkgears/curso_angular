@@ -4,12 +4,15 @@ class ProductsController < ApplicationController
   # GET /products
   def index
     @products = Product.all
-
+    @products.each do |product|
+      product.image_url = product.image.url
+    end
     render json: @products
   end
 
   # GET /products/1
   def show
+    @product.image_url = @product.image.url
     render json: @product
   end
 
