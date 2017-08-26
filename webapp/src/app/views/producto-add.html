@@ -1,4 +1,4 @@
-<h2>{{title}}</h2>
+<h2>{{titulo}}</h2>
 <hr>
 
 <form #formProducto="ngForm" (ngSubmit)="onSubmit()" class="col-lg-6" id="form-productos">
@@ -26,5 +26,15 @@
   <input type="file" name="" value="" (change)=fileChangeEvent($event) [multiple]="true">
   <br>
   <input type="submit" value="Guardar" [disabled]="!formProducto.form.valid" class="btn btn-success">
+  <hr>
+  <div>
+    <p>
+      <a *ngIf="producto.id" [routerLink]="['/productos',producto.id]" class="btn btn-primary">Detalles</a>
+      <a [routerLink]="['/productos']" class="btn btn-warning">Productos</a>
+    </p>
+  </div>
 
 </form>
+<div class="col-lg-4" *ngIf="producto.image_url">
+  <img src="{{url}}{{producto.image_url}}" class="producto_imagen_big" alt="">
+</div>

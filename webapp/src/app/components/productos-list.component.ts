@@ -29,7 +29,7 @@ import { GLOBAL } from '../services/global'
      this._productoService.getProductos().subscribe(
        result=>{
          this.productos = result;
-         console.log(this.productos);
+        //  console.log(this.productos);
        },
        error=>{
          console.log(<any>error)

@@ -1,34 +1,54 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { ProductoService } from '../services/producto.service'
-import { Producto } from '../models/producto'
-import { GLOBAL } from '../services/global'
+import { ProductoService } from '../services/producto.service';
+import { Producto } from '../models/producto';
+import { GLOBAL } from '../services/global';
 
 @Component ({
-   selector: 'producto-add',
+   selector: 'producto-edit',
    templateUrl: '../views/producto-add.html',
    providers:[ProductoService]
  })
 
- export class ProductoAddComponent{
-
+ export class ProductoEditComponent{
    public titulo: string;
    public producto: Producto;
-   public filesToUpload;
    public savedProducto;
-  //  public resultUpload;
+   public filesToUpload;
+   public resultUpload;
    public url = GLOBAL.url
 
    constructor(
-     private _productoService: ProductoService,
      private _route: ActivatedRoute,
-     private _router: Router
+     private _router: Router,
+     private _productoService: ProductoService
    ){
-     this.titulo = "Crear nuevo producto";
-     this.producto = new Producto('','','', '','');
+     this.titulo = "Editar producto";
+     this.url = GLOBAL.url;
+     this.producto = new Producto('','','','','')
    }
 
-   ngOnInit(){}
+   ngOnInit(){
+     this.getProducto();
+    //  console.log(this.titulo)
+   }
+
+   getProducto(){
+     this._route.params.forEach( (params: Params) => {
+       let id = params['id']
+       this._productoService.getProducto(id).subscribe(
+         response =>{
+           if(response.id){
+             this.producto = response
+           }
+         },
+         error =>{
+           this._router.navigate(['not_found'])
+           console.log(<any>error)
+         }
+       );
+     });
+   }
 
    onSubmit(){
      this.saveProducto()
@@ -36,7 +56,7 @@ import { GLOBAL } from '../services/global'
 
    saveProducto(){
      //  console.log(this.producto);
-      this._productoService.addProducto(this.producto).subscribe(
+      this._productoService.updateProducto(this.producto).subscribe(
         (result)=> {
           this.savedProducto = result.json();
           // console.log(this.savedProducto['id'])

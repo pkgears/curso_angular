@@ -25,7 +25,6 @@ export class ProductoDetailsComponent {
   }
 
   ngOnInit(){
-    this._productoService.getProducto;
     this.getProducto()
   }
 

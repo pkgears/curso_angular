@@ -10,6 +10,8 @@ import { ErrorComponent } from './components/error.component';
 import { ProductosListComponent } from './components/productos-list.component';
 import { ProductoAddComponent } from './components/producto-add.component';
 import { ProductoDetailsComponent} from './components/producto-details.component';
+import { ProductoEditComponent} from './components/producto-edit.component';
+
 // Rutas
 import { routing, appRoutingProviders } from './app.routing';
 @NgModule({
@@ -19,7 +21,8 @@ import { routing, appRoutingProviders } from './app.routing';
     ErrorComponent,
     ProductosListComponent,
     ProductoAddComponent,
-    ProductoDetailsComponent
+    ProductoDetailsComponent,
+    ProductoEditComponent
   ],
   imports: [
     BrowserModule,

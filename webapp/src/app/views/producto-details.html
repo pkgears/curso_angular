@@ -4,6 +4,13 @@
 <div *ngIf="producto">
   <div class="col-lg-4" >
     <img class="producto_imagen_big" src="{{url}}{{producto.image_url}}" alt="">
+    <hr>
+    <div>
+      <p *ngIf="producto.id">
+        <a [routerLink]="['/productos']" class="btn btn-primary">Productos</a>
+        <a [routerLink]="['/productos',producto.id,'editar']" class="btn btn-warning">Editar</a>
+      </p>
+    </div>
   </div>
   <div class="col-lg-8">
     <h2>{{producto.name}}</h2>

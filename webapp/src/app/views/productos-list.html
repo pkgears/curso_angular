@@ -13,7 +13,7 @@
             <!-- <p>{{producto.description}}</p> -->
             <p class="botonera">
               <a class="btn btn-default btn-success" [routerLink]="['/productos',producto.id]">Ver</a>
-              <a href="" class="btn btn-default btn-warning">Editar</a>
+              <a href="" class="btn btn-default btn-warning"  [routerLink]="['/productos',producto.id,'editar']">Editar</a>
               <a href="" class="btn btn-default btn-danger">Borrar</a>
             </p>
         </div>
