@@ -36,7 +36,12 @@ export class ProductoService{
       let params = 'product='+json;
       let headers = new Headers({'Content-Type': 'application/json'});
 
-      return this._http.put(this.url+'/products/'+producto.id, json, {headers:headers})
+      return this._http.put(this.url+'/products/'+producto.id, json, {headers:headers}).map(res=>res.json)
+    }
+
+    deleteProducto(id: String){
+      let headers = new Headers({'Content-Type': 'application/json'});
+      return this._http.delete(this.url+'/products/'+id, {headers:headers})
     }
 
     makeFileRequest(url: string, params: Array<string>, files: Array<File>){

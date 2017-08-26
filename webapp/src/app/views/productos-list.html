@@ -11,11 +11,16 @@
             <h4>{{producto.name}}</h4>
             <p><strong>$ {{producto.price}}.00</strong></p>
             <!-- <p>{{producto.description}}</p> -->
-            <p class="botonera">
+            <div class="botonera" *ngIf="confirm != producto.id">
               <a class="btn btn-default btn-success" [routerLink]="['/productos',producto.id]">Ver</a>
               <a href="" class="btn btn-default btn-warning"  [routerLink]="['/productos',producto.id,'editar']">Editar</a>
-              <a href="" class="btn btn-default btn-danger">Borrar</a>
-            </p>
+              <a (click)="confirmDelete(producto.id)" class="btn btn-default btn-danger">Borrar</a>
+            </div>
+            <div class="confirmar" *ngIf="confirm == producto.id">
+                <!-- <span>¿Seguro que deseas borrar este producto?</span> -->
+                <a (click)="onDeleteProducto(producto.id)" class="btn btn-sm btn-danger">Eliminar</a>
+                <a (click)="cancelDelete()" class="btn btn-sm btn-warning">Cancelar</a>
+            </div>
         </div>
       </div>
     </div>
