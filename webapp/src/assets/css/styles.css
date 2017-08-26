@@ -75,3 +75,18 @@ footer {
 #form-productos label{
   margin-top: 10px
 }
+
+.producto_imagen{
+  height: 150px;
+  margin: 0 auto;
+  display: block;
+}
+
+.caption{
+  /*height: 150px;*/
+  overflow: hidden;
+}
+
+.botonera{
+  text-align: right;
+}

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ProductoService } from '../services/producto.service'
 import { Producto } from '../models/producto'
+import { GLOBAL } from '../services/global'
 @Component ({
    selector: 'productos-list',
    templateUrl: '../views/productos-list.html',
@@ -12,6 +13,7 @@ import { Producto } from '../models/producto'
 
    public titulo: string;
    public productos: Producto[];
+   public url: string;
 
    constructor(
      private _route: ActivatedRoute,
@@ -19,6 +21,7 @@ import { Producto } from '../models/producto'
      private _productoService: ProductoService
   ){
      this.titulo = 'Lista de Productos';
+     this.url = GLOBAL.url
    }
 
    ngOnInit(){

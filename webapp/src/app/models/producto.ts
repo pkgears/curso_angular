@@ -5,7 +5,7 @@ export class Producto {
     public name: string,
     public description: string,
     public price: string,
-    public image: string
+    public image_url: string
   ){}
 
 }
