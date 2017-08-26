@@ -82,6 +82,12 @@ footer {
   display: block;
 }
 
+.producto_imagen_big{
+  height: 250px;
+  margin: 0 auto;
+  display: block;
+}
+
 .caption{
   /*height: 150px;*/
   overflow: hidden;

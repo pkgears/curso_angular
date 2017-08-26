@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home.component';
 import { ErrorComponent} from './components/error.component';
 import { ProductosListComponent} from './components/productos-list.component';
 import { ProductoAddComponent} from './components/producto-add.component';
+import { ProductoDetailsComponent} from './components/producto-details.component';
 
 
 const appRouter: Routes = [
@@ -13,6 +14,7 @@ const appRouter: Routes = [
   {path:'home', component:HomeComponent},
   {path:'productos', component:ProductosListComponent},
   {path:'nuevo', component:ProductoAddComponent},
+  {path:'productos/:id', component:ProductoDetailsComponent},
   {path:'**', component:ErrorComponent}
 ];
 

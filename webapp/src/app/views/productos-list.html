@@ -12,7 +12,7 @@
             <p><strong>$ {{producto.price}}.00</strong></p>
             <!-- <p>{{producto.description}}</p> -->
             <p class="botonera">
-              <a href="" class="btn btn-default btn-success">Ver</a>
+              <a class="btn btn-default btn-success" [routerLink]="['/productos',producto.id]">Ver</a>
               <a href="" class="btn btn-default btn-warning">Editar</a>
               <a href="" class="btn btn-default btn-danger">Borrar</a>
             </p>
