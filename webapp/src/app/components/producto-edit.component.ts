@@ -58,7 +58,7 @@ import { GLOBAL } from '../services/global';
      //  console.log(this.producto);
       this._productoService.updateProducto(this.producto).subscribe(
         (result)=> {
-          this.savedProducto = result.json();
+          // this.savedProducto = result.json();
           // console.log(this.savedProducto['id'])
           if(this.savedProducto && this.filesToUpload && this.filesToUpload.length >= 1){
             this._productoService.makeFileRequest(this.url+'/products/upload_image/'+this.savedProducto['id'], [], this.filesToUpload)
